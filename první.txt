@@ -1,4 +1,0 @@
-# Toto je první soubor u kterého budu sledovat verzování.
-
-Pokus verze 1.
-Pokus verze 1.1
