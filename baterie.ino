@@ -3,11 +3,11 @@
 #include <ESP8266WiFi.h>
 
 // Replace with your network details
-const char* ssid = "...";
-const char* password = "...";
+const char* ssid = "PCZ_Office";
+const char* password = "PlaOff367";
 
 
-ADC_MODE(ADC_VCC);
+//ADC_MODE(ADC_VCC);
 char v_str[10];
 
 // Web Server on port 80
@@ -43,13 +43,13 @@ void setup() {
 }
 
 void getBaterry() {
-   // most exact output
- // uint16_t v = ESP.getVcc();
- uint16_t v = analogRead(A0)*0.08;
- 
-  float_t v_cal = ((float)v/1024.0f);
-  
-  dtostrf(v_cal, 5, 3, v_str);
+  // most exact output
+  //uint16_t v = ESP.getVcc();
+  uint16_t v = analogRead(A0);
+  //Serial.println(v);
+  float_t v_cal = v * (5.20 / 1023.0);
+   
+  dtostrf(v_cal, 5, 2, v_str);
   sprintf(v_str,"%s V", v_str);
   
 }
